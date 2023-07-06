@@ -13,32 +13,29 @@ const SlickCarousel = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
+    // slidesToShow: 2,
     slidesToScroll: 1,
+    // fade: true,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    pauseOnHover: true,
   };
 
   return (
-    // <div>
     <section className="slick-container">
-      <h2> Single Item</h2>
       <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
+        {list.map((person) => {
+          const { id, name, title, quote, image } = person;
+          return (
+            <article key={id}>
+              <img src={image} alt={name} className="person-img" />
+              <h5 className="name">{name}</h5>
+              <p className="title">{title}</p>
+              <p className="text">{quote}</p>
+              <FaQuoteRight className="icon" />
+            </article>
+          );
+        })}
       </Slider>
     </section>
   );

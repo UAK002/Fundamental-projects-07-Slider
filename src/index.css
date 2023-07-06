@@ -367,7 +367,7 @@ ul {
 .person-img {
   width: 150px;
   height: 150px;
-  border-radius: var(--borderRadius);
+  border-radius: 50%;
   margin-bottom: 1rem;
   object-fit: cover;
   border: 4px solid var(--primary-200);
@@ -460,4 +460,17 @@ ul {
   margin-top: 10rem;
   width: 90vw;
   max-width: 800px;
+  text-align: center;
+}
+
+.slick-slide img {
+  display: inline;
+}
+
+.slick-prev::before {
+  color: var(--primary-500) !important ;
+}
+
+.slick-next::before {
+  color: var(--primary-500) !important ;
 }
